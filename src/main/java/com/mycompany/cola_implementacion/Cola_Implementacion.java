@@ -3,6 +3,7 @@
  */
 
 package com.mycompany.cola_implementacion;
+import com.mycompany.cola_implementacion.Cola; 
 
 /**
  *
@@ -11,6 +12,18 @@ package com.mycompany.cola_implementacion;
 public class Cola_Implementacion {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        Cola colita = new Cola();
+        ///encolar
+        colita.encolar(10);
+        colita.encolar(30);
+        colita.encolar(50);
+        System.out.println("Cola actual: ");
+        colita.mostrar();
+        
+        //desencolar
+        colita.desencolar();
+        System.out.println("actualizado");
+        colita.mostrar();
     }
 }

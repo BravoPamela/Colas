@@ -28,39 +28,57 @@ public class Cola {
         }else{
              
             ultimo.siguiente = nuevo;
-            nuevo = ultimo;
+            ultimo = nuevo;
             respuesta = true;
         }
         
     return respuesta;
     }
-    public String desencolar(){
-        
+    public boolean desencolar(){
+       
         if (isEmpty()){
-            return "La cola esta vacia";
-        }else{
-            
+            System.out.println("La cola esta vacia");
+            return false;
         }
-        
-    return "";
+            System.out.println("El nodo fue eliminado"+frente.dato);
+            frente = frente.siguiente;
+            
+            if (frente == null){
+                
+                ultimo=null;
+            }
+            return true;
     }
     
     public boolean isEmpty(){
         
-        if(frente == null){
+        /*if(frente == null){
             respuesta = true;
         }
-    return respuesta;
+    return respuesta;*/
+        //directo
+        return frente == null;
     }
     
     public int peek(){
         
       return frente.dato;  
     }
+    
     public boolean isfull(){
      return true;
     }
+    
     public void mostrar(){
     
+        Nodo actual = frente;
+        while (actual != null){
+            System.out.println(actual.dato + "");
+            actual = actual.siguiente;
+        }
+    
+        System.out.println("");
     }
+    
+    
 }
